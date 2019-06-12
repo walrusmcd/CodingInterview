@@ -43,4 +43,5 @@ void printPermutations(const char* input)
 	// and then print the permutations
 	StringPermutate::printOption(output, 0, len, &totalOptions);
 	cout << "total permutations = " << totalOptions << "\n";
+	delete output; output = nullptr;
 }

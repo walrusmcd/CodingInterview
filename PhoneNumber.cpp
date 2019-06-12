@@ -51,5 +51,6 @@ void printOptions(const char* phoneNumber)
 	int totalOptions = 0;
 	printOption(output, 0, len, &totalOptions);
 	cout << "totalOptions = " << totalOptions << "\n";
+	delete output; output = nullptr;
 }
 
