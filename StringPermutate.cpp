@@ -17,7 +17,7 @@ namespace StringPermutate
 		// are we done?
 		if (start == len)
 		{
-			// print the permutation
+			// print it, we hit the end
 			cout << output << "\n";
 			*totalOptions += 1;
 			return;

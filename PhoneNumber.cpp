@@ -21,7 +21,6 @@ void printOption(char* option, int s, int len, int * totalOptions)
 	// are we done?
 	if (s == len) {
 		// print it, we hit the end
-				// print it
 		cout << option << "\n";
 		*totalOptions += 1;
 		return;
