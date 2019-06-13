@@ -19,9 +19,12 @@ bool palindromePermutation(const char* input)
 	// awesome, are there matching pairs for all the chars?
 	int countOfNonEven = 0;
 	for (auto it = charMap.begin(); it != charMap.end(); ++it) {
+		// is it odd?
 		if (it->second % 2) {
 			// keep track of how many odd counts we have (we might be allowed to have one)
 			countOfNonEven += 1;
+			// if the len is odd, we are allowed 1 odd char
+			// if the len is even, we are allowed 0 odd chars
 			if (((len % 2) && countOfNonEven > 1) ||
 				(!(len % 2) && countOfNonEven > 0)) {
 				// no good!
