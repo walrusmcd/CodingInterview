@@ -1,6 +1,7 @@
 // ArraysAndStrings.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+#include "pch.h"
 #include <iostream>
 #include <map>
 
@@ -88,7 +89,7 @@ bool checkPermutation(const char* str1, const char * str2)
 }
 
 // note: this modifies str inplace
-char * URLify(char* str, int len)
+char * URLify(char* str, size_t len)
 {
 	for (int i = 0; i < len; ++i)
 	{
@@ -96,7 +97,7 @@ char * URLify(char* str, int len)
 		if (str[i] == ' ')
 		{
 			// yup, let's url escape it.  first make space, slide everything down 2 chars
-			for (int j = len; j > i; j--)
+			for (size_t j = len; j > i; j--)
 			{
 				str[j+2] = str[j];
 			}
@@ -113,46 +114,3 @@ char * URLify(char* str, int len)
 	return str;
 }
 
-int main()
-{
-	char str[1024];
-
-	// 
-	std::cout << "isUnique('abcd')   = \t" << isUnique("abcd") << "\n";
-	std::cout << "isUnique('abcda')  = \t" << isUnique("abcda") << "\n";
-	std::cout << "isUnique('')       = \t" << isUnique("") << "\n";
-	std::cout << "isUnique(nullptr)  = \t" << isUnique(nullptr) << "\n";
-	std::cout << "\n";
-	//
-	std::cout << "isUnique2('abcd')  = \t" << isUnique2("abcd") << "\n";
-	std::cout << "isUnique2('abcda') = \t" << isUnique2("abcda") << "\n";
-	std::cout << "isUnique2('')      = \t" << isUnique2("") << "\n";
-	std::cout << "isUnique2(nullptr) = \t" << isUnique2(nullptr) << "\n";
-	std::cout << "\n";
-	// 
-	std::cout << "checkPermutation('dog', 'god') = \t" << checkPermutation("dog", "god") << "\n";
-	std::cout << "checkPermutation('dog', 'god1') = \t" << checkPermutation("dog", "god1") << "\n";
-	std::cout << "checkPermutation('dog', 'gog') = \t" << checkPermutation("dog", "gog") << "\n";
-	std::cout << "checkPermutation('hero', 'eroh') = \t" << checkPermutation("hero", "eroh") << "\n";
-	std::cout << "\n";
-	//
-	strcpy_s(str, sizeof(str), "this is a test");
-	std::cout << "URLify('this is a test') = " << URLify(str, strlen(str)) << "\n";
-	strcpy_s(str, sizeof(str), "thisisatest");
-	std::cout << "URLify('thisisatest') = " << URLify(str, strlen(str)) << "\n";
-	strcpy_s(str, sizeof(str), " thisisatest ");
-	std::cout << "URLify(' thisisatest ') = " << URLify(str, strlen(str)) << "\n";
-	std::cout << "\n";
-	
-}
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
