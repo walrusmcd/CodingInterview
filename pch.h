@@ -17,10 +17,14 @@
 #include <list>		// list
 #include <queue>	// priority queue
 #include <limits>	// infinity
+#include <algorithm> // max
 
 bool isUnique(const char* str);
 bool isUnique2(const char* str);
 bool checkPermutation(const char* str1, const char * str2);
 char * URLify(char* str, size_t len);
+bool palindromePermutation(const char* input);
+bool oneAway(const char* str1, const char* str2);
+void compressString(const char* input, char* output, size_t outputCch);
 
 #endif //PCH_H

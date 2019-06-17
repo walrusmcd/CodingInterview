@@ -90,6 +90,30 @@ int main()
 		}
 		std::cout << ")\n";
 	}
+
+
+	// phonenumber problem
+	//std::cout << "printOptions('4255551212') = " << "\n";
+	//printOptions("4255551212");
+
+	// permutations
+	//std::cout << "printPermutations('abc') = " << "\n";
+	//printPermutations("abcdef");
+
+	std::cout << "palindromePermutation('abc') = " << palindromePermutation("abcdef") << "\n";
+	std::cout << "palindromePermutation('tactcoa') = " << palindromePermutation("tactcoa") << "\n";
+	std::cout << "palindromePermutation('tactcoade') = " << palindromePermutation("tactcoad") << "\n";
+	std::cout << "palindromePermutation('tactcoade') = " << palindromePermutation("tactcoade") << "\n";
+	std::cout << "palindromePermutation('acaramanamaraca') = " << palindromePermutation("acaramanamaraca") << "\n";
+
+	std::cout << "oneAway('pale') = " << oneAway("pale", "ple") << "\n";
+	std::cout << "oneAway('pales', 'pale') = " << oneAway("pales", "pale") << "\n";
+	std::cout << "oneAway('pale') = " << oneAway("pale", "bale") << "\n";
+	std::cout << "oneAway('pale') = " << oneAway("pale", "bake") << "\n";
+
+	compressString("aabcccccaaa", str, sizeof(str)/sizeof(char));
+	std::cout << "compressString('aabcccccaaa') = " << str << "\n";
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
