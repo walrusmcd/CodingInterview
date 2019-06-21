@@ -133,7 +133,7 @@ list<point> shortestPathKnightDj(point start, point end, uint32_t maxMovesToTry,
 	map<point, point> prev;
 	map<point, uint32_t> distTo;
 	// start from the beginning
-	distTo[start] = 0.0;
+	distTo[start] = 0;
 	queue.push(QueueItem(start, 0));
 	// start iterating !
 	movesTried = 0;
@@ -219,7 +219,7 @@ void testChessBoard()
 	uint32_t movesTried;
 	list<point> pathTo;
 
-	std::srand(std::time(nullptr)); // use current time as seed for random generator
+	std::srand((unsigned int)std::time(nullptr)); // use current time as seed for random generator
 
 	// a short and easy one
 	cout << "shortestPathKnight(100,100 -> 101,102)\n";
