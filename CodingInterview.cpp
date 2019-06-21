@@ -97,7 +97,7 @@ int main()
 	//printOptions("4255551212");
 
 	// permutations
-	//std::cout << "printPermutations('abc') = " << "\n";
+	//std::cout << "printPermutations('abcde') = " << "\n";
 	//printPermutations("abcdef");
 
 	std::cout << "palindromePermutation('abc') = " << palindromePermutation("abcdef") << "\n";
@@ -113,6 +113,30 @@ int main()
 
 	compressString("aabcccccaaa", str, sizeof(str)/sizeof(char));
 	std::cout << "compressString('aabcccccaaa') = " << str << "\n";
+
+	int z = 0;
+	int** bitmap = new int* [4];
+	for (int i = 0; i < 4; ++i) {
+		bitmap[i] = new int[4];
+		for (int j = 0; j < 4; ++j) 
+			bitmap[i][j] = z++ % 10;
+	}
+	printImage(bitmap, 4);
+	std::cout << "rotateImage90(bitmap)\n";
+	rotateImage90(bitmap, 4);
+	printImage(bitmap, 4);
+
+
+	//TreeNode *tree = buildTree();
+	//std::cout << "printTreeInOrder(tree)\n";
+	//printTreeInOrder(tree);
+	//std::cout << "\n";
+
+	//std::cout << "printTreePostOrder(tree)\n";
+	//printTreePostOrder(tree);
+	//std::cout << "\n";
+
+	testChessBoard();
 
 }
 

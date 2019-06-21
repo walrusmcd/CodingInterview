@@ -246,3 +246,52 @@ void compressString(const char* input, char * output, size_t outputCch)
 	}
 }
 
+// takes a square W x W bitmap (matrix) and rotates it 90(d) clockwise
+void rotateImage90(int** bitmap, int width)
+{
+	// go through all the layers
+	for (int layer = 0; layer < width / 2; layer++)
+	{
+		int first = layer;
+		int last = width - 1 - layer;
+		for (int i = first; i < last; i++)
+		{
+			int offset = i - first;
+			// save the top
+			int temp = bitmap[first][i];
+			// copy left -> top 
+			bitmap[first][i] = bitmap[last - offset][first];
+			// copy bottom -> left 
+			bitmap[last - offset][first] = bitmap[last][last - offset];
+			// copy rigth -> bottom 
+			bitmap[last][last - offset] = bitmap[i][last];
+			// copy top -> right
+			bitmap[i][last] = temp;
+		}
+	}
+}
+
+void printImage(int** bitmap, int width)
+{
+	for (int i = 0; i < width; ++i) {
+		for (int j = 0; j < width; ++j) {
+			cout << bitmap[i][j];
+		}
+		cout << "\n";
+	}
+	cout << "\n";
+}
+
+void zeroMatrix(int** bitmap, int width)
+{
+
+}
+
+// add 2 numbers that are stored as binary in a string
+// e.g. 001 + 001 = 010
+void addBinaryNumbers(const char* num1, const char* num2, char * output, int outLenCch)
+{
+	// start at the end and add them together 
+	string s;
+	s.size();
+}

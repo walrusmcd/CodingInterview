@@ -35,3 +35,13 @@ bool routeBetweenNodes(EdgeWeightedDirectedGraph g, int from, int to);
 std::list<int> topologicalSort(EdgeWeightedDirectedGraph g);
 std::list<int> shortestPath(EdgeWeightedDirectedGraph g, int from, int to);
 
+class TreeNode
+{
+public:
+	int data;
+	TreeNode* left;
+	TreeNode* right;
+};
+void printTreeInOrder(TreeNode* node);
+void printTreePostOrder(TreeNode* node);
+TreeNode* buildTree();

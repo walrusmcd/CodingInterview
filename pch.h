@@ -26,5 +26,11 @@ char * URLify(char* str, size_t len);
 bool palindromePermutation(const char* input);
 bool oneAway(const char* str1, const char* str2);
 void compressString(const char* input, char* output, size_t outputCch);
+void rotateImage90(int** bitmap, int width);
+void printImage(int** bitmap, int width);
+void printPermutations(const char* input);
+
+
+void testChessBoard();
 
 #endif //PCH_H

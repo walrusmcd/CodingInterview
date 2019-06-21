@@ -156,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArraysAndStrings.cpp" />
+    <ClCompile Include="ChessBoard.cpp" />
     <ClCompile Include="CodingInterview.cpp" />
     <ClCompile Include="GraphWalk.cpp" />
     <ClCompile Include="PalindromePermutation.cpp" />

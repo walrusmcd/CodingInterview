@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "TreesAndGraphs.h"
 
-
+using namespace std;
 
 bool dfsRecursive(EdgeWeightedDirectedGraph g, int from, int to = -1)
 {
@@ -255,4 +255,93 @@ std::list<int> shortestPath(EdgeWeightedDirectedGraph g, int from, int to)
 	if (!path.empty())
 		path.push_front(from);
 	return path;
+}
+
+bool bfsIterative2(EdgeWeightedDirectedGraph g, int from, int to = -1)
+{
+	// keep track of where we visited
+	vector<bool> visited(g.V, false);
+	// keep a queue for iterating (FIFO)
+	list<int> queue;
+	// put the first one on the queue
+	queue.push_back(from);
+	// start iterating
+	while (!queue.empty())
+	{
+		// pop the front
+		int n = queue.front();
+		queue.pop_front();
+		// we visited here
+		visited[n] = true;
+		// is this our vertex?
+		if (n == to)
+		{
+			// we found it !
+			return true;
+		}
+		// handle all the adjacents
+		for (auto it = g.adj[n].begin(); it != g.adj[n].end(); ++it)
+		{
+			// make sure not to cycle
+			if (!visited[it->to])
+			{
+				queue.push_back(it->to);
+			}
+		}
+	}
+	return false;
+}
+
+
+void printTreeInOrder(TreeNode * node)
+{
+	if (node == nullptr)
+		return;
+	printTreeInOrder(node->left);
+	cout << "node.data = " << node->data << ",";
+	printTreeInOrder(node->right);
+}
+
+void printTreePostOrder(TreeNode* node)
+{
+	if (node == nullptr)
+		return;
+	printTreeInOrder(node->left);
+	printTreeInOrder(node->right);
+	cout << "node.data = " << node->data << ",";
+}
+
+TreeNode* insertTree(TreeNode* node, int data)
+{
+	if (node == nullptr)
+	{
+		node = new TreeNode();
+		node->data = data;
+		return node;
+	}
+	// does this go on the left?
+	if (data <= node->data)
+	{ 
+		node->left = insertTree(node->left, data);
+	}
+	else
+	{
+		node->right = insertTree(node->right, data);
+	}
+	
+	return node;
+}
+
+TreeNode* buildTree()
+{
+	TreeNode* root = nullptr;
+	for (int i = 5; i < 10; ++i)
+	{
+		root = insertTree(root, i);
+	}
+	for (int i = 0; i < 5; ++i)
+	{
+		root = insertTree(root, i);
+	}
+	return root;
 }
