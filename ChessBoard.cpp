@@ -128,7 +128,7 @@ list<point> shortestPathKnightDj(point start, point end, uint32_t maxMovesToTry,
 	// keep track of where we have been
 	map<point, bool> visited;
 	// use a priority queue with djikstra
-	std::priority_queue<QueueItem, std::vector<QueueItem>, std::greater<QueueItem>> queue;
+	priority_queue<QueueItem, std::vector<QueueItem>, std::greater<QueueItem>> queue;
 	// keep track of our path
 	map<point, point> prev;
 	map<point, uint32_t> distTo;
@@ -219,7 +219,7 @@ void testChessBoard()
 	uint32_t movesTried;
 	list<point> pathTo;
 
-	std::srand((unsigned int)std::time(nullptr)); // use current time as seed for random generator
+	srand((unsigned int)std::time(nullptr)); // use current time as seed for random generator
 
 	// a short and easy one
 	cout << "shortestPathKnight(100,100 -> 101,102)\n";
