@@ -104,7 +104,7 @@ list<point> shortestPathKnightBfs(point start, point end, uint32_t maxMovesToTry
 	return path;
 }
 
-// use djikstra to find the path of the knight.
+// use djikstra to find the path of the knight (note: i grabbed some of this from my personal djikstra impl in this same repo)
 list<point> shortestPathKnightDj(point start, point end, uint32_t maxMovesToTry, uint32_t& movesTried)
 {
 	// nice trick to use a std::priority_queue sorted by distTo and keeping my vertex
